@@ -1,5 +1,5 @@
 {% set name = "gpkgstatus" %}
-{% set version = "2.1.2" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ca4e7a45da7a28d93fecd378b3838c57a083f36a154f4384d63d3e6b55944296
+  sha256: bc0c56a90b3fbfa2be5303665a862be707746702996e96f07746ab4dab506e35
 
 build:
   entry_points:
-  - gpkgstatus = gpkgstatus.entrypoint:main
+    - gpkgstatus = gpkgstatus.entrypoint:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
@@ -39,7 +39,7 @@ test:
 
 about:
   home: https://dkvc.github.io/gpkgstatus/
-  summary: "Get Current Package Status from Fedora Updates System"
+  summary: Get Current Package Status from Fedora Updates System
   description: |
     gpkgstatus is a command-line tool for checking the status of packages on bodhi.fedoraproject.org. 
     It allows you to search for a specific package and get information about its current status, including 
